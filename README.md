@@ -3,7 +3,7 @@
 ## Requisitos
 
 - Node.js instalado
-- OpenSSL instalado no computador
+- OpenSSL instalado no computador.
 Baixe o OpenSSL para Windows: https://slproweb.com/products/Win32OpenSSL.html
 
 Fluxo de Emissão
