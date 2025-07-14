@@ -17,11 +17,9 @@ Fluxo de Emissão
 
 Como Executar
 
-  node src/validar.js
-
-  node src/emitir.js
-
-  node src/recuperar.js
+- node src/validar.js  
+- node src/emitir.js  
+- node src/recuperar.js
 
 Como funciona
 - Solicitação: é o nome de usuário fornecido pela Soluti
