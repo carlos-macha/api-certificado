@@ -27,7 +27,7 @@ Como funciona
 - digitaltermHash, exigido na rota de emissão, é obtido na resposta da rota de validação
 
 Finalizando a emissão
-Após executar o recuperar.js, será gerado o arquivo certificado_final.pem
+Após executar o recuperar.js, será gerado o arquivo certificado_final.pem.
 Este arquivo deve ser armazenado junto com a chave privada gerada na emissão (chavePrivada.pem)
 
 Convertendo para .pfx
