@@ -1,24 +1,35 @@
-Para rodar esses códigos é preciso ter o OpenSSL instalado no computador: https://slproweb.com/products/Win32OpenSSL.html
+# Emissão de Certificado Digital com Node.js e API Soluti
 
-fluxo de emissão:
-  1.validar.js
-  2.emitir.js
-  3.validar.js
-  4.recuperar.js
+## Requisitos
 
-como executar o código:
-  node src/validar.js
-  node src/emitir.js
-  node src/recuperar.js
+- Node.js instalado
+- OpenSSL instalado no computador
+Baixe o OpenSSL para Windows: https://slproweb.com/products/Win32OpenSSL.html
 
-O código digitaltermHash, exigido na rota de emissão, é obtido na resposta da rota de validação.
+Fluxo de Emissão
+1. Validar os dados
+node src/validar.js
 
-Solicitação é o nome de usuário. 
-A senha de emissão, é a senha criada pelo cliente na hóra da compra do certificado.
+2. Emitir o certificado
+node src/emitir.js
 
-Após executar a rota para recuperar o certificado, ela vai retornar o arquivo certificado_final.pem,
-você deve armazenar ele em um diretório junto com o arquivo  chavePrivado.pem, que foi gerado na hóra da emissão.
-Após isso você deve rodar o comando abaixo para concatenar eles em um arquivo .pfx,
-e por fim executar o arquivo .pfx no computador que deseja instalar o certificado.
+3. Validar novamente para obter digitaltermHash
+node src/validar.js
 
-Comando: openssl pkcs12 -export -inkey chavePrivada.pem -in certificado_final.pem -out certificado_final.pfx
+4. Recuperar o certificado
+node src/recuperar.js
+
+Como funciona
+- Solicitação: é o nome de usuário fornecido pela Soluti
+- Senha de emissão: é a senha criada pelo cliente na hora da compra do certificado
+- digitaltermHash, exigido na rota de emissão, é obtido na resposta da rota de validação
+
+Finalizando a emissão
+Após executar o recuperar.js, será gerado o arquivo certificado_final.pem
+Este arquivo deve ser armazenado junto com a chave privada gerada na emissão (chavePrivada.pem)
+
+Convertendo para .pfx
+Execute o comando abaixo:
+openssl pkcs12 -export -inkey chavePrivada.pem -in certificado_final.pem -out certificado_final.pfx
+
+O arquivo .pfx gerado é o certificado completo, pronto para ser instalado no computador do cliente
