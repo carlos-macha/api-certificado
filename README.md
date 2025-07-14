@@ -27,11 +27,14 @@ Como funciona
 - digitaltermHash, exigido na rota de emissão, é obtido na resposta da rota de validação
 
 Finalizando a emissão
-Após executar o recuperar.js, será gerado o arquivo certificado_final.pem.
-Este arquivo deve ser armazenado junto com a chave privada gerada na emissão (chavePrivada.pem)
+
+- Após executar o recuperar.js, será gerado o arquivo certificado_final.pem.
+- Este arquivo deve ser armazenado junto com a chave privada gerada na emissão (chavePrivada.pem)
 
 Convertendo para .pfx
-Execute o comando abaixo:
-openssl pkcs12 -export -inkey chavePrivada.pem -in certificado_final.pem -out certificado_final.pfx
+
+- Execute o comando abaixo:
+
+- openssl pkcs12 -export -inkey chavePrivada.pem -in certificado_final.pem -out certificado_final.pfx
 
 O arquivo .pfx gerado é o certificado completo, pronto para ser instalado no computador do cliente
