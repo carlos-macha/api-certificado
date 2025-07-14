@@ -8,15 +8,19 @@ Baixe o OpenSSL para Windows: https://slproweb.com/products/Win32OpenSSL.html
 
 Fluxo de Emissão
 1. Validar os dados
-node src/validar.js
 
 2. Emitir o certificado
-node src/emitir.js
 
 3. Validar novamente para obter digitaltermHash
-node src/validar.js
 
 4. Recuperar o certificado
+
+Como Executar
+
+node src/validar.js
+
+node src/emitir.js
+
 node src/recuperar.js
 
 Como funciona
