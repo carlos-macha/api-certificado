@@ -11,7 +11,7 @@ Fluxo de Emissão
 
 2. Emitir o certificado
 
-3. Validar novamente para obter digitaltermHash
+3. Validar os dados
 
 4. Recuperar o certificado
 
