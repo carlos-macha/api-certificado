@@ -1,7 +1,7 @@
 const CryptoJS = require('crypto-js');
 
-const solicitacao = "712E25070490A85C 00014035873969";
-const senhaEmissao = "99625746Car$";
+const solicitacao = "";
+const senhaEmissao = "";
 const baseUrl = 'https://artecnosign.acsoluti.com.br';
 
 const generateValidNonce = () => {

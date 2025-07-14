@@ -6,8 +6,8 @@ const FormData = require('form-data');
 const fetch = require('node-fetch');
 
 const baseUrl = 'https://artecnosign.acsoluti.com.br';
-const solicitacao = '712E25070490A85C 00014035873969';
-const senhaEmissao = '99625746Car$';
+const solicitacao = "";
+const senhaEmissao = "";
 const urlEmissor = 'https://emissor.ca.inf.br/prod/Emissor.jar';
 
 const generateValidNonce = () => {
@@ -61,7 +61,7 @@ function gerarChavesECsr() {
 
   const csr = forge.pki.createCertificationRequest();
   csr.publicKey = keys.publicKey;
-  csr.setSubject([{ name: 'commonName', value: '712E25070490A85C 00014035873969' }]);
+  csr.setSubject([{ name: 'commonName', value: '' }]);
   csr.sign(keys.privateKey, forge.md.sha256.create());
 
   const pemCsr = forge.pki.certificationRequestToPem(csr);
@@ -130,7 +130,7 @@ async function emitirCertificado(nonce1, nonce2, cookie, csr, digitalterm_signat
     const { cookie, nonce2 } = await abrirSessao(nonce1);
     const { csr, chavePrivadaPath } = gerarChavesECsr();
 
-    const digitaltermHash = '3031300d0609608648016503040201050004201fc7179c4564ddf18d954ec1cbfd9ff4a39437aa4f430e9231e143d1e799827e';
+    const digitaltermHash = '';
     const digitalterm_signature = assinarDigitalTerm(digitaltermHash, chavePrivadaPath);
 
     await emitirCertificado(nonce1, nonce2, cookie, csr, digitalterm_signature);
